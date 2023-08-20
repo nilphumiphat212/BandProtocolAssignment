@@ -8,31 +8,31 @@ To use the Broadcasting Transaction Client Module, you need to have the nilphumi
 ## Usage
 
 Import the necessary packages in your Go code:
-'''go
+```go
 import (
 	"fmt"
 	"nilphumiphat.assignment.bandprotocol/pkg/transaction"
 	// Other necessary packages
 )
-'''
+```
 
 Create a new transaction using the NewTransaction function from the transaction package:
-'''go
+```go
 transaction := transaction.NewTransaction("ETH", 50000)
-'''
+```
 
 Broadcast the transaction using the Broadcast method:
-'''go
+```go
 data, err := transaction.Broadcast()
 if err != nil {
     fmt.Println("Broadcast failed:", err)
 } else {
     fmt.Println("Broadcast successful. Transaction hash:", data.TxHash)
 }
-'''
+```
 
 Check the status of the transaction using the CheckStatus method:
-'''go
+```go
 status, err := transaction.CheckStatus()
 if err != nil {
     fmt.Println("Status check failed. Please check your network connection.")
@@ -40,7 +40,7 @@ if err != nil {
     fmt.Println("Status:", status.Status)
     fmt.Println("Transaction:", status.Message)
 }
-'''
+```
 
 # Transaction Status Handling
 The Broadcasting Transaction Client Module handles transaction statuses as follows:
